@@ -65,8 +65,8 @@ while(1)
 %    light_color=mydata.light_color;
    light_color=[0 0 0 0];
    [xc,yc,thetac]=read_pos(opti,frame);
-   X = - xc;
-   Y = - yc;
+   xc = - xc;
+   yc = - yc;
    
    %************************************************************************************
    %carID=i; pathnum is path number
@@ -80,7 +80,7 @@ while(1)
     
     
     % command calculation()
-    current_pos = [X(str2double(CARID)), Y(str2double(CARID))];
+    current_pos = [xc(str2double(CARID)), yc(str2double(CARID))];
     current_dir = thetac(str2double(CARID));
   
     [heading_angle,dist] = cal_command(current_pos,current_dir,[path(pathnum(str2double(CARID)),N(str2double(CARID)),1),path(pathnum(str2double(CARID)),N(str2double(CARID)),2)]);  
